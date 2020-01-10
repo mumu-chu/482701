@@ -1,0 +1,6 @@
+- hosts: node
+  tasks:
+  - debug: var=item
+    loop: "{{ ansible_mounts }}"
+  - debug: msg="{{ item.size_available }} / {{ item.size_total }}"
+    loop: "{{ ansible_mounts }}"
